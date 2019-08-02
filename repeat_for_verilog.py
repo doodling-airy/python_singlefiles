@@ -30,7 +30,7 @@ class Verilog:
                 self.filedata.append(self.lined)
     
     def out(self):
-        path = r"C:\Users\iwaha\Documents\practice_6_14\\" + self.verilog_filename
+        path = self.verilog_filename
         with open(path, mode='w') as f:
             f.write("".join(self.filedata))
                 

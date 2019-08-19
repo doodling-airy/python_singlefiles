@@ -2,8 +2,7 @@ import pyperclip as pc
 
 def print_copy(replacestring, sets):
     replacestring = rep(replacestring, sets)
-    print(replacestring)
-    pc.copy(replacestring)
+    return replacestring
 
 def rep(rs, sets):
     for i in range(len(sets)):
@@ -29,8 +28,10 @@ class Cgui:
 def out(igui):
     replacestring = igui.inputtext.get("1.0", "end-1c")
     replaceset = [["tmp", "w_tmp"], ["(H", "(r_H"], ["(N", "(w_N"]]
-    print_copy(replacestring, replaceset)
-        
+    replacestring = print_copy(replacestring, replaceset)
+    print(replacestring)
+    pc.copy(replacestring)
+
 if __name__ == "__main__":
     import tkinter as tk
     igui = Cgui()

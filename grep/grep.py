@@ -18,7 +18,7 @@ class grep:
         self.option_decoder(query_options)
         ###
 
-        shutil.copytree(self.p, self.p + "-backup")
+        shutil.copytree(self.p, "../" + self.p + "-backup")
         if(self.r):
             #正規表現に当てはめる
             self.search_word = r"{}".format(self.search_word)
@@ -90,5 +90,5 @@ class grep:
 
 
 
-if name == "__main__":
-  g = grep(sys.argv[1:])
+
+g = grep(sys.argv[1:])

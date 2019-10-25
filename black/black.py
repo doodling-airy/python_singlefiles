@@ -44,9 +44,6 @@ class Gamemate:
         if (action in self.order):
             if (action == "d"):
                 self.have_card.append(card.draw_card())
-                if self.real_sum() > 21:
-                    print("you lose")
-                    exit()
             elif (action == "r"):
                 print("you lose!")
             elif (action == "f"):
@@ -84,7 +81,7 @@ class Dealer(Gamemate):
             self.action(self.autoaction(), card)
             if self.real_sum() > 21:
                 print("dealer did bankrupt!")
-                break
+                exit()
             if self.real_sum() >= 17:
                 break
 
